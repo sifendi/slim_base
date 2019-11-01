@@ -1,0 +1,49 @@
+##################################################################
+### Request     : Login
+### Description : Masuk dalam sistem
+POST http://192.168.33.10/tmp/ScientiaApp-master/public/api/clogin HTTP/1.1
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+
+{
+  "tx_username": "super",
+  "tx_password": "super"
+}
+
+##################################################################
+### Request     : Check Auth
+### Description : Melihat action yang diijinkan pada menu aktif
+POST http://192.168.33.10/tmp/ScientiaApp-master/public/api/cauth HTTP/1.1
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Authorization : Bearer <Token>
+
+{
+  "path": "/menu"
+}
+
+
+##################################################################
+### Request     : Menu List
+### Description : Menampilkan semua menu yang dapat diakses
+POST http://192.168.33.10/tmp/ScientiaApp-master/public/api/cmenu HTTP/1.1
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Authorization : Bearer <Token>
+
+
+##################################################################
+### Request     : Read Role
+### Description : (DataTables) - Menampilkan semua list role berdasarkan filter
+POST http://192.168.33.10/tmp/ScientiaApp-master/public/api/role/read HTTP/1.1
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Authorization : Bearer <Token>
+
+{
+  "start": 0,
+  "length": 10,
+  "search": {
+      "value": null
+  }
+}
